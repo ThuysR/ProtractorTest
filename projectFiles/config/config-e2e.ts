@@ -4,7 +4,7 @@ const jsonReports = process.cwd() + "/reports/json";
 
 export const config: Config = {
 
-    baseUrl: "https://dev-myequipmenttracker.tvh.com",
+    baseUrl: "https://theuselessweb.com",
     
     capabilities: {
         browserName: "chrome",
@@ -17,7 +17,7 @@ export const config: Config = {
     frameworkPath: require.resolve("protractor-cucumber-framework"),
 
     specs: [
-        "../../../projectFiles/features/*.feature"
+        "../../projectFiles/features/*.feature"
     ],
 
     onPrepare: () => {
@@ -30,10 +30,10 @@ export const config: Config = {
         compiler: "ts:ts-node/register",
         format: "json:./reports/json/cucumber_report.json",
         require: [            
-            "../../../projectFiles/stepDefinitions/*.ts",
+            "../../projectFiles/stepDefinitions/*.ts",
  
-            "../../../projectFiles/support/*.ts",
-            "../../../projectFiles/support/hooks/dev-hooks.ts"
+            "../../projectFiles/support/*.ts",
+            "../../projectFiles/support/hooks/dev-hooks.ts"
             ],
         strict: true
     },
