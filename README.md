@@ -1,41 +1,42 @@
 # Protractor Start
 
 do these steps: 
-1.  npm run webdriver-update
-2.  npm run build
-3.  npm run test
+1. npm install 
+2. npm run webdriver-update
+3. npm run build
+4. npm run test
 
 That should do the trick.... normally
 
-How to use:
+## How to use:
 
-package.json:
+### package.json:
     Here we declare all the scripts like the above. 
     These files link towards the projectFiles/config/*.ts files
     npm run test => projectFiles/config/config-test.ts
 
-ProjectFiles:
-config files:
+### ProjectFiles:
+### config files:
     the specs: are used to talk to the features. Which features should we run? 
     cucumberOpts: which files are used to execute the features
     (the hooks are used for easy switch between dev - prod - local)
 
-features:
+### features:
     Here we declare cucumber features: for easy human readable
 
-pages:
+### pages:
     BasePage.ts: All methods combined for re-usage
     page object / page
 
-stepDefinitions:
+### stepDefinitions:
     Let the features speak to the page objects
     use await, otherwise you will get errors :/ 
 
-support: Generation of reports and screenshots and so on
+### support: Generation of reports and screenshots and so on
     hooks: Used to declare what happens before every test, all test and also after. 
 
-typeScript: 
+### typeScript: 
     This file is created automatic, it's a conversion from typeScript to JavaScript (Not needed to touch)
 
-Utils:
+### Utils:
     Here you can put files for usage through the project
