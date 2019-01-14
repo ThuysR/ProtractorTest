@@ -1,11 +1,12 @@
 # Protractor Start
 
 do these steps: 
+```
 1. npm install 
 2. npm run webdriver-update
 3. npm run build
 4. npm run test
-
+```
 That should do the trick.... normally
 
 ## How to use:

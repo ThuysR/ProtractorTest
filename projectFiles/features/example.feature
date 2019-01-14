@@ -1,7 +1,7 @@
 Feature: This is an example Scenario
 
     Background: 
-            Given I am on the 'unlinked devices' page
+            #A step that will be repeated in all the scenarios in this file
 
 #These tests wont work, pure examples
 
