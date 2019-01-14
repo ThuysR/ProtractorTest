@@ -1,0 +1,57 @@
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+node('fe-node-chrome') {
+
+    String slackChannel = "OPTIONAL"
+    currentBuild.result = 'SUCCESS'
+
+    stage('Checkout') {
+        checkout scm
+    }
+
+    try {
+        setupContainers()
+      runTests("ENV")     
+    } catch (error) {
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+private void setupContainers() {
+    sh 'git config --global user.name ""'
+    sh 'git config --global user.email ""'
+
+    stage('Setup container') {
+        container('node-chrome') {
+            sh '''
+                npm config set registry 
+                npm i -g yarn@1.3.2
+                yarn install
+                npm run build
+                npm run webdriver-update
+            '''
+        }
+    }
+}
+
+private void runTests(String envString){
+     String env = envString
+     echo env
+      stage('Test Exceuction') {
+        container('node-chrome') {
+            sh """
+                intTestFailed=1
+                npm run test:jenkins-'${env}' && intTestFailed=0
+            """
+            def intTestFailed = sh (
+                script: 'echo $intTestFailed',
+                returnStdout: true
+            ).trim()
+ 
+            if(intTestFailed == "1"){
+                error('Tests failed')
+            }
+        }
+    }
+}

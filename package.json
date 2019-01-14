@@ -1,0 +1,62 @@
+{
+  "name": "protractor-typescript-cucumber",
+  "version": "3.0.0",
+  "license": "MIT",
+  "description": "To demostrate protractor cucumber tests for angular/non angular apps with allure report framework",
+  "homepage": "https://github.com/igniteram/protractor-cucumber-typescript",
+  "keywords": [
+    "protractor",
+    "cucumber",
+    "typescript",
+    "angular",
+    "angularjs",
+    "testing",
+    "behaviour driven development",
+    "bdd",
+    "selenium",
+    "webdriverJS",
+    "gherkin",
+    "automation testing"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "god-mode": "npm run clean-build && npm run clean-images",
+    "buildTest": "npm run build && npm run test",
+    "build": "tsc",
+    "clean": "rimraf typeScript/",
+    "clean-images": "rimraf reports/failed-screenshots/*.png",
+    "clean-build": "npm run clean && npm run build",
+    "webdriver-update": "webdriver-manager update --versions.chrome=2.35",
+    "webdriver-start": "webdriver-manager start",
+    "test": "protractor typeScript/config/config-test.js"
+  },
+  "devDependencies": {
+    "@types/cucumber": "^2.0.4",
+    "@types/node": "^8.10.39",
+    "@types/selenium-webdriver": "^3.0.14",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.0.0",
+    "cucumber": "^3.0.4",
+    "cucumber-html-reporter": "^4.0.3",
+    "fs": "0.0.1-security",
+    "jasmine": "^3.3.1",
+    "jasmine-core": "^3.3.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.23.0",
+    "polycrc": "^0.1.0",
+    "protractor": "^5.4.2",
+    "protractor-cucumber-framework": "^4.0.8",
+    "protractor-html-screenshot-reporter": "0.0.21",
+    "protractor-jasmine2-screenshot-reporter": "^0.5.0",
+    "rimraf": "^2.6.3",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3",
+    "typescript-logging": "^0.5.0",
+    "username": "^3.0.0"
+  },
+  "repository": "https://github.com/igniteram/protractor-cucumber-typescript",
+  "dependencies": {
+    "types-assert": "0.0.4",
+    "webdriver-manager": "^12.1.1"
+  }
+}

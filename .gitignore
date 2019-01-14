@@ -1,0 +1,11 @@
+node_modules/
+npm-debug*
+debug.log
+TypeScript/
+reports/
+.vscode
+.classpath
+.project
+.settings
+*.iml
+.idea
