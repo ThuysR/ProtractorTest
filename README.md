@@ -1,8 +1,30 @@
 # Protractor Start
 
+to install
+([https://medium.com/@arnab.k/difference-between-save-dev-and-save-while-running-npm-50e3c0784153])
+
+I'm not sure if version do matter
+
+*cucumber
+*node
+*selenium-webdriver
+*chai
+*chai-as-promised
+*cucumber
+*cucumber-html-reporter
+*moment (optional for later use if using dates)
+*protractor
+*protractor-cucumber-framework
+*rimraf
+*ts-node
+*typescript
+*webdriver-manager
+
+If this doesn't work, I can provide a node-module file, but this is not recommended...
+
 do these steps: 
 ```
-1. npm install 
+1. npm install (generate node-modules)
 2. npm run webdriver-update
 3. npm run build
 4. npm run test
@@ -41,3 +63,6 @@ That should do the trick.... normally
 
 ### Utils:
     Here you can put files for usage through the project
+
+
+When it's not working just shoot, I'll try and help out. 
