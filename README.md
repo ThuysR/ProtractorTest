@@ -5,20 +5,20 @@ to install
 
 I'm not sure if version do matter
 
-*cucumber
-*node
-*selenium-webdriver
-*chai
-*chai-as-promised
-*cucumber
-*cucumber-html-reporter
-*moment (optional for later use if using dates)
-*protractor
-*protractor-cucumber-framework
-*rimraf
-*ts-node
-*typescript
-*webdriver-manager
+* cucumber
+* node
+* selenium-webdriver
+* chai
+* chai-as-promised
+* cucumber
+* cucumber-html-reporter
+* moment (optional for later use if using dates)
+* protractor
+* protractor-cucumber-framework
+* rimraf
+* ts-node
+* typescript
+* webdriver-manager
 
 If this doesn't work, I can provide a node-module file, but this is not recommended...
 
