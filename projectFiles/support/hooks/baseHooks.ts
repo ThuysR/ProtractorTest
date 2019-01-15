@@ -10,13 +10,13 @@ export function executeHooks(baseFile) {
         await browser.get(baseFile.baseUrl);
     });
 
-    Before(async function (scenario) {
+    Before(async function (scenario:any) {
         await LOG.info(() => "\n\n--------TEST STARTING: " + JSON.stringify(scenario).split("name\":\"").pop().split("\"", 1) + " || from: " + JSON.stringify(scenario).split("uri\":\"").pop().split("\"", 1) + "--------");
     });
 
     setDefaultTimeout(60 * 1000);
 
-    After(async function (scenario) {
+    After(async function (scenario:any) {
         if (scenario.result.status === Status.FAILED) {
             await LOG.error("\n\n!!~~~~~~TEST FAILED~~~~~~!!\n\n");
             const screenShot = await browser.takeScreenshot();

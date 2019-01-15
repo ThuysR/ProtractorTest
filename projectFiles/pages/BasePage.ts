@@ -30,10 +30,10 @@ export abstract class BasePage {
             .then(() => element.click());
     }
 
-    waitForElementAndContainsText(element, text) {
+    waitForElementAndContainsText(element: ElementFinder, text: any) {
         return browser.wait(EC.visibilityOf(element), timeout)
             .then(() => expect(element.getText()).to.eventually.equal(text));
-    }
+    }s
 
     baseDropDownSelect(element: ElementFinder, index: number) {
         return element.click()
@@ -70,7 +70,7 @@ export abstract class BasePage {
 
     //RETURN
 
-    waitForVisibilityOfAndReturnText(element, timeout = 10000) {
+    waitForVisibilityOfAndReturnText(element: ElementFinder, timeout = 10000) {
         return browser.wait(EC.visibilityOf(element), timeout)
             .then(() => element.getText())
             .then((text) => text);
@@ -95,11 +95,11 @@ export abstract class BasePage {
         return browser.waitForAngular();
     }
 
-    sleep(wait) {
+    sleep(wait: any) {
         return browser.sleep(wait);
     }
 
-    baseThrowError(errorMessage) {
+    baseThrowError(errorMessage:string) {
         throw (errorMessage);
     }
 
